@@ -2,7 +2,6 @@
 
 import { FC } from "react";
 import { cn } from "@/lib/utils";
-import { clientReq } from "@/api/clientReq";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -27,6 +26,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import { FormCommonProps } from "./ContactFormTrigger";
+import axios from "axios";
 
 const FormSchema = z.object({
   firstname: z.string().refine((value) => !/\s/.test(value), {
@@ -61,15 +61,6 @@ export const ContactForm: FC<ContactFormProps> = ({
     },
   });
 
-  console.log(
-    form.watch("firstname"),
-    form.watch("lastname"),
-    form.watch("phone"),
-    firstname,
-    lastname,
-    phone
-  );
-
   const handleDisabled = () => {
     if (
       action === "update" &&
@@ -85,9 +76,9 @@ export const ContactForm: FC<ContactFormProps> = ({
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     const requestMethod = action === "create" ? "post" : "put";
-    const url = action === "create" ? "/contacts" : `/contacts/${index}`;
+    const url = action === "create" ? "contacts" : `contacts/${index}`;
 
-    clientReq[requestMethod](url, data).then(
+    axios[requestMethod](`http://localhost:3000/api/${url}`, data).then(
       ({ data: { success, message } }) => {
         if (success) {
           router.refresh();
