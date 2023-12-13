@@ -1,8 +1,4 @@
-export interface Contact {
-  firstname: string;
-  lastname: string;
-  phone: string;
-}
+import { Contact } from "./types";
 
 const contacts: Contact[] = [
   { firstname: "Eric", lastname: "Elliot", phone: "2225556575" },

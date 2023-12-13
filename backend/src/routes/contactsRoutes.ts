@@ -1,11 +1,10 @@
 import express from "express";
+
+import * as contactsController from "../controllers/contactsControllers"; // Change this line
+
 const router = express.Router();
 
-import contactsService from "../services/contactsService";
-
-router.get("/contacts", (req, res) => {
-  const contacts = contactsService.getAllContacts();
-  res.json(contacts);
-});
+router.get("/contacts", contactsController.getAllContacts);
+router.post("/contacts", contactsController.addContact);
 
 export default router;
