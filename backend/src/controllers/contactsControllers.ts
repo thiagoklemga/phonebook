@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { ApiResponse, Contact } from "../types";
-import contactsService from "../services/contactsService";
+import contactsService from "../services/contactsServices";
 
-export const getAllContacts = (req: Request, res: Response): void => {
+export const getAllContacts = ({ res }: { res: Response }): void => {
   const data: Contact[] = contactsService.getAllContacts();
   const apiResponse: ApiResponse = {
     success: true,
