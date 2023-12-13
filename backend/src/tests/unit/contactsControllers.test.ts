@@ -2,8 +2,7 @@ import { Response, Request } from "express";
 import * as contactsController from "../../controllers/contactsControllers";
 import contacts from "../../data";
 
-//test for getAllContacts
-describe("testings getAllContacts", () => {
+describe("getAllContacts", () => {
   test("getAllContacts", () => {
     const mockResponse = {
       json: jest.fn(),
@@ -21,8 +20,7 @@ describe("testings getAllContacts", () => {
   });
 });
 
-//test for addContact
-describe("testings addContact", () => {
+describe("addContact", () => {
   test("addContact", () => {
     const mockRequest = {
       body: {
@@ -47,8 +45,7 @@ describe("testings addContact", () => {
   });
 });
 
-//test for editContact
-describe("testings editContact", () => {
+describe("editContact", () => {
   test("editContact", () => {
     const mockRequest = {
       params: {
@@ -76,8 +73,7 @@ describe("testings editContact", () => {
   });
 });
 
-//test for deleteContact
-describe("testings deleteContact", () => {
+describe("deleteContact", () => {
   test("deleteContact", () => {
     const mockRequest = {
       params: {

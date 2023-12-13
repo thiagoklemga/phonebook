@@ -3,7 +3,7 @@ import contactsService from "../../services/contactsServices";
 import { Contact } from "../../types";
 
 describe("getAllContacts", () => {
-  test("root", () => {
+  test("getAllContacts", () => {
     expect(contactsService.getAllContacts()).toEqual(contacts);
   });
 });
@@ -45,26 +45,6 @@ describe("addContact", () => {
     expect(contactsService.addContact(newContact)).toEqual({
       success: false,
       message: "Phone number already exists",
-    });
-  });
-});
-
-describe("deleteContact", () => {
-  test("with correct data", () => {
-    const index = 0;
-
-    expect(contactsService.deleteContact(index)).toEqual({
-      success: true,
-      message: "Contact deleted successfully",
-    });
-  });
-
-  test("with invalid index", () => {
-    const index = 100;
-
-    expect(contactsService.deleteContact(index)).toEqual({
-      success: false,
-      message: "Invalid index for deleting the contact",
     });
   });
 });
@@ -123,6 +103,26 @@ describe("editContact", () => {
     expect(contactsService.editContact(index, updatedContact)).toEqual({
       success: false,
       message: "Invalid index for editing the contact",
+    });
+  });
+});
+
+describe("deleteContact", () => {
+  test("with correct data", () => {
+    const index = 0;
+
+    expect(contactsService.deleteContact(index)).toEqual({
+      success: true,
+      message: "Contact deleted successfully",
+    });
+  });
+
+  test("with invalid index", () => {
+    const index = 100;
+
+    expect(contactsService.deleteContact(index)).toEqual({
+      success: false,
+      message: "Invalid index for deleting the contact",
     });
   });
 });

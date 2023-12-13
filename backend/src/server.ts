@@ -9,7 +9,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/contacts", routes);
 
-//Start server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

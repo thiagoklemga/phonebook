@@ -1,14 +1,9 @@
 import contacts from "../data";
+import { contactExists } from "../helpers/contactExists";
 import { Contact } from "../types";
 
 function getAllContacts(): Contact[] {
   return contacts;
-}
-
-function contactExists(phone: string, excludeIndex?: number): boolean {
-  return contacts.some(
-    (contact, index) => index !== excludeIndex && contact.phone === phone
-  );
 }
 
 function addContact(newContact: Contact): {
@@ -25,15 +20,6 @@ function addContact(newContact: Contact): {
 
   contacts.push(newContact);
   return { success: true, message: "Contact added successfully" };
-}
-
-function deleteContact(index: number): { success: boolean; message: string } {
-  if (index >= 0 && index < contacts.length) {
-    contacts.splice(index, 1);
-    return { success: true, message: "Contact deleted successfully" };
-  }
-
-  return { success: false, message: "Invalid index for deleting the contact" };
 }
 
 function editContact(
@@ -61,6 +47,15 @@ function editContact(
   }
 
   return { success: false, message: "Invalid index for editing the contact" };
+}
+
+function deleteContact(index: number): { success: boolean; message: string } {
+  if (index >= 0 && index < contacts.length) {
+    contacts.splice(index, 1);
+    return { success: true, message: "Contact deleted successfully" };
+  }
+
+  return { success: false, message: "Invalid index for deleting the contact" };
 }
 
 export default {

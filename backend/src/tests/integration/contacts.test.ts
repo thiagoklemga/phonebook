@@ -1,4 +1,3 @@
-//teste the route to getall contacts
 import request from "supertest";
 import { app } from "../../server";
 import contacts from "../../data";
@@ -15,7 +14,6 @@ describe("GET /contacts", () => {
   });
 });
 
-//test the route to edit a contact
 describe("PUT /contacts/:index", () => {
   test("PUT /contacts/:index", async () => {
     const index = 0;
