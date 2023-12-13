@@ -9,7 +9,7 @@ export const getAllContacts = ({ res }: { res: Response }): void => {
     message: "Contacts retrieved successfully",
     data,
   };
-  res.json(apiResponse);
+  res.status(200).json(apiResponse);
 };
 
 export const addContact = (req: Request, res: Response): void => {
@@ -22,7 +22,7 @@ export const addContact = (req: Request, res: Response): void => {
     message: result.message,
   };
 
-  res.json(apiResponse);
+  res.status(201).json(apiResponse);
 };
 
 export const editContact = (req: Request, res: Response): void => {
@@ -40,7 +40,7 @@ export const editContact = (req: Request, res: Response): void => {
     message: result.message,
   };
 
-  res.json(apiResponse);
+  res.status(200).json(apiResponse);
 };
 
 export const deleteContact = (req: Request, res: Response): void => {
@@ -53,5 +53,5 @@ export const deleteContact = (req: Request, res: Response): void => {
     message: result.message,
   };
 
-  res.json(apiResponse);
+  res.status(204).json(apiResponse);
 };

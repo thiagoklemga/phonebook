@@ -7,14 +7,14 @@
 So, go to the backend folder and run to install and then to run the api on port 8080:
 
 ```bash
-npm run instal
+npm install
 npm run dev
 ```
 
 Then, you must go to the frontend file and run the same commands:
 
 ```bash
-npm run instal
+npm install
 npm run dev
 ```
 

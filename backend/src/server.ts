@@ -1,13 +1,18 @@
 import express from "express";
 import bodyParser from "body-parser";
 import routes from "./routes/contactsRoutes";
+import swaggerUi from "swagger-ui-express";
+import swaggerFile from "./swagger-output.json";
 
 export const app = express();
 const port = 8080;
 
+console.log(process.env.INTEGRATION_PORT);
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use("/contacts", routes);
+app.use(routes);
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);

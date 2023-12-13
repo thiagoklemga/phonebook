@@ -4,7 +4,10 @@ import contacts from "../../data";
 
 describe("getAllContacts", () => {
   test("getAllContacts", () => {
-    const mockResponse = {
+    const res = {
+      status: jest.fn(() => {
+        return res;
+      }),
       json: jest.fn(),
     } as unknown as Response;
 
@@ -14,9 +17,9 @@ describe("getAllContacts", () => {
       data: contacts,
     };
 
-    contactsController.getAllContacts({ res: mockResponse });
+    contactsController.getAllContacts({ res });
 
-    expect(mockResponse.json).toHaveBeenCalledWith(mockApiResponse);
+    expect(res.json).toHaveBeenCalledWith(mockApiResponse);
   });
 });
 
@@ -30,7 +33,10 @@ describe("addContact", () => {
       },
     } as Request;
 
-    const mockResponse = {
+    const res = {
+      status: jest.fn(() => {
+        return res;
+      }),
       json: jest.fn(),
     } as unknown as Response;
 
@@ -39,9 +45,9 @@ describe("addContact", () => {
       message: "Contact added successfully",
     };
 
-    contactsController.addContact(mockRequest, mockResponse);
+    contactsController.addContact(mockRequest, res);
 
-    expect(mockResponse.json).toHaveBeenCalledWith(mockApiResponse);
+    expect(res.json).toHaveBeenCalledWith(mockApiResponse);
   });
 });
 
@@ -58,7 +64,10 @@ describe("editContact", () => {
       },
     } as unknown as Request;
 
-    const mockResponse = {
+    const res = {
+      status: jest.fn(() => {
+        return res;
+      }),
       json: jest.fn(),
     } as unknown as Response;
 
@@ -67,9 +76,9 @@ describe("editContact", () => {
       message: "Contact edited successfully",
     };
 
-    contactsController.editContact(mockRequest, mockResponse);
+    contactsController.editContact(mockRequest, res);
 
-    expect(mockResponse.json).toHaveBeenCalledWith(mockApiResponse);
+    expect(res.json).toHaveBeenCalledWith(mockApiResponse);
   });
 });
 
@@ -81,7 +90,10 @@ describe("deleteContact", () => {
       },
     } as unknown as Request;
 
-    const mockResponse = {
+    const res = {
+      status: jest.fn(() => {
+        return res;
+      }),
       json: jest.fn(),
     } as unknown as Response;
 
@@ -90,8 +102,8 @@ describe("deleteContact", () => {
       message: "Contact deleted successfully",
     };
 
-    contactsController.deleteContact(mockRequest, mockResponse);
+    contactsController.deleteContact(mockRequest, res);
 
-    expect(mockResponse.json).toHaveBeenCalledWith(mockApiResponse);
+    expect(res.json).toHaveBeenCalledWith(mockApiResponse);
   });
 });
