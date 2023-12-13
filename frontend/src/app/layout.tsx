@@ -7,7 +7,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Phonebook App",
+  title: "Phone Book App",
 };
 
 export default function RootLayout({

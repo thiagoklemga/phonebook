@@ -15,7 +15,7 @@ interface IPhoneBookData {
 
 async function getPhoneBookData() {
   const res = await fetch("http://localhost:8080/contacts", {
-    cache: "no-store",
+    cache: "no-cache",
   });
 
   return res.json() as Promise<IPhoneBookData>;
