@@ -78,3 +78,35 @@ export const editContact = (req: Request, res: Response): void => {
     res.status(400).json(apiResponse);
   }
 };
+
+export const deleteContact = (req: Request, res: Response): void => {
+  const index: number = parseInt(req.params.index, 10);
+
+  if (isNaN(index)) {
+    const apiResponse: ApiResponse = {
+      status: "error",
+      message: "Invalid index provided for deleting the contact",
+      data: [],
+    };
+    res.status(400).json(apiResponse);
+    return;
+  }
+
+  const result = contactsService.deleteContact(index);
+
+  if (result.success) {
+    const apiResponse: ApiResponse = {
+      status: "success",
+      message: result.message,
+      data: [],
+    };
+    res.json(apiResponse);
+  } else {
+    const apiResponse: ApiResponse = {
+      status: "error",
+      message: result.message,
+      data: [],
+    };
+    res.status(400).json(apiResponse);
+  }
+};

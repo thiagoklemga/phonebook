@@ -39,8 +39,18 @@ function editContact(
   return { success: false, message: "Invalid index for editing the contact" };
 }
 
+function deleteContact(index: number): { success: boolean; message: string } {
+  if (index >= 0 && index < contacts.length) {
+    contacts.splice(index, 1);
+    return { success: true, message: "Contact deleted successfully" };
+  }
+
+  return { success: false, message: "Invalid index for deleting the contact" };
+}
+
 export default {
   getAllContacts,
   addContact,
   editContact,
+  deleteContact,
 };
