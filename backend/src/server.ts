@@ -7,7 +7,7 @@ const port = 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use("/api", routes);
+app.use("/contacts", routes);
 
 //Start server
 app.listen(port, () => {

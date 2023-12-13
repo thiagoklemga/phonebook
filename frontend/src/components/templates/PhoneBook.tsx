@@ -8,16 +8,22 @@ import { ContactFormTrigger } from "@/components/organisms/ContactFormTrigger";
 import { ContactTable } from "@/components/organisms/ContactTable";
 import { ContactItemProps } from "@/components/organisms/ContactItem";
 
+interface IPhoneBookData {
+  success: boolean;
+  message: string;
+  data: ContactItemProps[];
+}
+
 async function getPhoneBookData() {
   const res = await fetch("http://localhost:8080/contacts", {
     cache: "no-store",
   });
 
-  return res.json() as Promise<ContactItemProps[]>;
+  return res.json() as Promise<IPhoneBookData>;
 }
 
 export const PhoneBook = async () => {
-  const data = await getPhoneBookData();
+  const { data } = await getPhoneBookData();
 
   return (
     <section

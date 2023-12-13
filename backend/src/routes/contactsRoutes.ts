@@ -4,9 +4,9 @@ import * as contactsController from "../controllers/contactsControllers";
 
 const router = express.Router();
 
-router.get("/contacts", contactsController.getAllContacts);
-router.post("/contacts", contactsController.addContact);
-router.put("/contacts/:index", contactsController.editContact);
-router.delete("/contacts/:index", contactsController.deleteContact);
+router.get("/", contactsController.getAllContacts);
+router.post("/", contactsController.addContact);
+router.put("/:index", contactsController.editContact);
+router.delete("/:index", contactsController.deleteContact);
 
 export default router;

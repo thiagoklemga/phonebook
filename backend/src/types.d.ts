@@ -5,7 +5,7 @@ export interface Contact {
 }
 
 export interface ApiResponse {
-  status: string;
+  success: boolean;
   message: string;
-  data: Contact[];
+  data?: Contact[];
 }
