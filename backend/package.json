@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --require dotenv/config --exec ts-node src/server.ts dotenv_config_path=.env-example",
+    "dev": "nodemon --require dotenv/config --exec ts-node src/server.ts dotenv_config_path=.env",
     "test": "jest --watchAll --coverage",
     "swagger": "node src/swagger.mjs"
   },
