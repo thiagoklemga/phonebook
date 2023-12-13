@@ -48,7 +48,7 @@ export const ContactItem: FC<ContactItemProps> = ({
       )}
     >
       <div>
-        <div className={cn("flex gap-1 text-3xl font-semibold")}>
+        <div className={cn("flex gap-2 text-3xl font-semibold")}>
           <p>{firstname}</p>
           <p>{lastname}</p>
         </div>

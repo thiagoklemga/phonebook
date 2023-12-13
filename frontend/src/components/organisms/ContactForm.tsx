@@ -61,6 +61,28 @@ export const ContactForm: FC<ContactFormProps> = ({
     },
   });
 
+  console.log(
+    form.watch("firstname"),
+    form.watch("lastname"),
+    form.watch("phone"),
+    firstname,
+    lastname,
+    phone
+  );
+
+  const handleDisabled = () => {
+    if (
+      action === "update" &&
+      firstname === form.watch("firstname") &&
+      lastname === form.watch("lastname") &&
+      phone === form.watch("phone")
+    ) {
+      return true;
+    }
+
+    return false;
+  };
+
   function onSubmit(data: z.infer<typeof FormSchema>) {
     const requestMethod = action === "create" ? "post" : "put";
     const url = action === "create" ? "/contacts" : `/contacts/${index}`;
@@ -141,6 +163,7 @@ export const ContactForm: FC<ContactFormProps> = ({
           <DialogFooter>
             <Button
               type="submit"
+              disabled={handleDisabled()}
               className={cn("bg-blue-500 text-white text-lg")}
             >
               {action === "create" ? "New" : "Edit"} Contact

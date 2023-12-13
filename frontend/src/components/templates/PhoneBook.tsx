@@ -32,6 +32,7 @@ export const PhoneBook = async () => {
     >
       <div className={cn("flex gap-2")}>
         <BookUser size={44} />
+
         <h1 className={cn("text-4xl")}>Phone Book App</h1>
       </div>
 
