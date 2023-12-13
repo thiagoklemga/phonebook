@@ -53,5 +53,5 @@ export const deleteContact = (req: Request, res: Response): void => {
     message: result.message,
   };
 
-  res.status(204).json(apiResponse);
+  res.status(200).json(apiResponse);
 };

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/server.ts",
+    "dev": "nodemon --require dotenv/config --exec ts-node src/server.ts dotenv_config_path=.env-example",
     "test": "jest --watchAll --coverage",
     "swagger": "node src/swagger.mjs"
   },
@@ -15,6 +15,7 @@
     "@types/jest": "^29.5.11",
     "@types/swagger-ui-express": "^4.1.6",
     "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.1"
   },

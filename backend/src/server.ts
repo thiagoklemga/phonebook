@@ -5,15 +5,11 @@ import swaggerUi from "swagger-ui-express";
 import swaggerFile from "./swagger-output.json";
 
 export const app = express();
-const port = 8080;
-
-console.log(process.env.INTEGRATION_PORT);
+const port = process.env.BACKEND_PORT;
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(routes);
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+app.listen(port);

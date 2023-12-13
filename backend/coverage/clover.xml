@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1702507158349" clover="3.2.0">
-  <project timestamp="1702507158349" name="All files">
-    <metrics statements="71" coveredstatements="71" conditionals="20" coveredconditionals="20" methods="12" coveredmethods="12" elements="103" coveredelements="103" complexity="0" loc="71" ncloc="71" packages="5" files="6" classes="6"/>
+<coverage generated="1702507764592" clover="3.2.0">
+  <project timestamp="1702507764592" name="All files">
+    <metrics statements="69" coveredstatements="69" conditionals="18" coveredconditionals="18" methods="10" coveredmethods="10" elements="97" coveredelements="97" complexity="0" loc="69" ncloc="69" packages="5" files="6" classes="6"/>
     <package name="src">
-      <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="data.ts" path="/Users/thiagoklemg/phonebook/backend/src/data.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="3" type="stmt"/>
         <line num="11" count="3" type="stmt"/>
       </file>
       <file name="server.ts" path="/Users/thiagoklemg/phonebook/backend/src/server.ts">
-        <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -23,8 +23,6 @@
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="24" count="1" type="cond" truecount="2" falsecount="0"/>
       </file>
     </package>
     <package name="src.controllers">
