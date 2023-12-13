@@ -26,12 +26,55 @@ export const addContact = (req: Request, res: Response): void => {
   }
 
   const newContact: Contact = { firstname, lastname, phone };
-  contactsService.addContact(newContact);
+  const result = contactsService.addContact(newContact);
 
-  const apiResponse: ApiResponse = {
-    status: "success",
-    message: "Contact added successfully",
-    data: [newContact],
-  };
-  res.status(201).json(apiResponse);
+  if (result.success) {
+    const apiResponse: ApiResponse = {
+      status: "success",
+      message: result.message,
+      data: [newContact],
+    };
+    res.status(201).json(apiResponse);
+  } else {
+    const apiResponse: ApiResponse = {
+      status: "error",
+      message: result.message,
+      data: [],
+    };
+    res.status(400).json(apiResponse);
+  }
+};
+
+export const editContact = (req: Request, res: Response): void => {
+  const index: number = parseInt(req.params.index, 10);
+  const { firstname, lastname, phone } = req.body;
+
+  if (isNaN(index) || !firstname || !lastname || !phone) {
+    const apiResponse: ApiResponse = {
+      status: "error",
+      message: "Invalid data or index provided for editing the contact",
+      data: [],
+    };
+    res.status(400).json(apiResponse);
+    return;
+  }
+
+  const updatedContact: Contact = { firstname, lastname, phone };
+  const result = contactsService.editContact(index, updatedContact);
+
+  if (result.success) {
+    const apiResponse: ApiResponse = {
+      status: "success",
+      message: result.message,
+      data: [updatedContact],
+    };
+    res.json(apiResponse);
+  } else {
+    const apiResponse: ApiResponse = {
+      status: "error",
+      message: result.message,
+      data: [],
+    };
+    res.status(400).json(apiResponse);
+  }
 };
