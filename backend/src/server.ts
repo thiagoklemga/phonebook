@@ -5,7 +5,7 @@ import swaggerUi from "swagger-ui-express";
 import swaggerFile from "./swagger-output.json";
 
 export const app = express();
-const port = process.env.BACKEND_PORT;
+const port = 8080;
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(bodyParser.urlencoded({ extended: true }));

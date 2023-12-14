@@ -29,6 +29,7 @@ Backend:
 - Express
 - Jest and superjest
 - Nodemon
+- Swagger (To check the documentation open [http://localhost:8080/api-docs](http://localhost:8080/api-docs))
 
 Frontend:
 
@@ -41,6 +42,10 @@ Frontend:
 
 ## On matter of tests
 
-Important: To run the tests, i suggest to stop the backend on port 8080 cause the integration tests are using the port.
+```bash
+npm test
+```
+
+Important: To run the tests, its necessary to stop the backend on port 8080 cause the integration tests are using the same port.
 
 I've created tests only for the backend, covering 100% of all my code. Using unit tests for the controllers and services, and integration tests for the routes.
