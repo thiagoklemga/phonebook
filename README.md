@@ -50,3 +50,7 @@ npm test
 Important: To run the tests, its necessary to stop the backend on port 8080 cause the integration tests are using the same port.
 
 I've created tests only for the backend, covering 100% of all my code. Using unit tests for the controllers and services, and integration tests for the routes.
+
+## TODO
+
+Already installed and created the files that the docker, but im still getting error on the build of the image on the last part. Since i dont have more time (13/12), i will send it like and try to configure this on the future.
