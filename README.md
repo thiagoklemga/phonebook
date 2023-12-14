@@ -8,14 +8,15 @@ So, go to the backend folder and run to install and then to run the api on port 
 
 ```bash
 npm install
-npm run dev
+npm run start
 ```
 
 Then, you must go to the frontend file and run the same commands:
 
 ```bash
 npm install
-npm run dev
+npm run build
+npm run start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the Phone Book.

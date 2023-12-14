@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node src/server.ts",
     "dev": "nodemon --exec ts-node src/server.ts",
     "test": "jest --watchAll --coverage",
     "swagger": "node src/swagger.mjs"
